@@ -87,6 +87,10 @@ async function specifiedTakeData(node, id, key) {
         return null;  // Mengembalikan null jika terjadi kesalahan
     }
 }
+// specifiedTakeData("banunaStoreData", "aboutStore", "aboutText") parameter yang tengah merupakan value statis, jika item banyak dan sejenis dan tidak di ketahui (misalnya: id1, id2, id3, etc maka memerlukan iterasi), lakukan seperti pada kode product di bawah ini.
+// specifiedTakeData("products", "", "productName") maka hanya mengembalikan productName dari masing" product
+// specifiedTakeData("products", "", ["productName", "productPrice", etc]) maka mengembalikan value sesuai yang di pilih dari masing" product
+// specifiedTakeData("products", "productId1", "" / "productName" / ["productName", "productPrice", etc]) untuk mengambil semua, satu, banyak data dari productId1 saja
 
 const universalTakeData = async (path) => {
     try {
@@ -103,6 +107,7 @@ const universalTakeData = async (path) => {
         return null;  // Mengembalikan null jika terjadi kesalahan
     }
 }
+// contoh penggunaan await universalTakeData("products"); berarti megambil semua data dari products
 
 export { universalDataFunction, universalTakeData, specifiedTakeData, database };
 

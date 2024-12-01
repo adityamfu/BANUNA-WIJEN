@@ -1,3 +1,4 @@
+import "./firebase-config.js";
 import { universalDataFunction, universalTakeData, database } from "./data-controller.js";
 import { ref, get, set, remove } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-database.js";
 const banun = "banuna";
@@ -32,19 +33,19 @@ const seedData = () => {
         },
         products: {
             productId1: {
-                productName: "Banana",
-                productDesc: "Fresh organic bananas.",
-                productPrice: 1.5,
-                productImages: ["image1.jpg", "image2.jpg"],
+                productName: "Wijen Original",
+                productDesc: "Dengan Taburan Wijen",
+                productPrice: "25.000",
+                productImages: ["pisangwijen.jpg"],
                 productVideos: ["video1.mp4"],
                 dateCreated: "2024-11-15T11:00:00Z"
             },
             productId2: {
-                productName: "Apple",
-                productDesc: "Crisp red apples.",
-                productPrice: 2.0,
-                productImages: ["apple1.jpg"],
-                productVideos: [],
+                productName: "Keju Original",
+                productDesc: "Dengan Taburan Keju",
+                productPrice: "25.000",
+                productImages: ["pisankeju.jpg"],
+                productVideos: ["video1.mp4"],
                 dateCreated: "2024-11-20T09:00:00Z"
             }
         },
@@ -56,13 +57,13 @@ const seedData = () => {
         },
         feedbacks: {
             feedbackId1: {
-                name: "user1",
-                feedbackText: "Great product quality!",
+                feedbackName: "Lita Sari",
+                feedbackText: "Eh, pisang goreng beku wijen ini bener-bener mantap! Crispy dan manisnya pas. Aku suka banget, apalagi ditambah saus sambal, jadi pedas-pedas gitu. Enak buat ngemil sambil nonton film bareng keluarga. Ini jadi camilan favorit di rumah, pasti stoknya selalu ada!",
                 dateCreated: "2024-11-25T13:00:00Z"
             },
             feedbackId2: {
-                name: "user2",
-                feedbackText: "Fast delivery, very satisfied!",
+                feedbackName: "Arief",
+                feedbackText: "Eh, pisang goreng beku wijen ini bener-bener mantap! Crispy dan manisnya pas. Aku suka banget, apalagi ditambah saus sambal, jadi pedas-pedas gitu. Enak buat ngemil sambil nonton film bareng keluarga. Ini jadi camilan favorit di rumah, pasti stoknya selalu ada!",
                 dateCreated: "2024-11-26T14:00:00Z"
             }
         },
@@ -99,45 +100,47 @@ const seedData = () => {
         },
         partners: {
             partnerId1: {
-                partnerName: "Supplier One",
+                partnerName: "Daing Mart",
                 partnerEmail: "supplier1@example.com",
+                partnerDesc: "Frozen food parcel buah, pempek & daging",
                 partnerSocials: {
                     instagram: {
-                        instaId: {
-                            instagramUsername: "Banuna",
+                        instaId1: {
+                            instagramUsername: "@pempek.daing",
                             instagramUrl: "https://instagram.com/supplier"
                         }
                     },
                     facebook: {
-                        facebookId: {
+                        facebookId1: {
                             facebookUsername: "Banuna",
                             facebookUrl: "https://facebook.com/supplier"
                         }
                     },
                     youtube: {
-                        youtubeId: {
+                        youtubeId1: {
                             youtubeUsername: "Banuna",
                             youtubeUrl: "https://youtube.com/supplier"
                         }
                     },
                     tiktok: {
-                        tiktokId: {
+                        tiktokId1: {
                             tiktokUsername: "Banuna",
                             tiktokUrl: "https://tiktok.com/supplier"
                         }
                     }
                 },
                 partnerImage: "supplier1.jpg",
-                partnerAddress: "123 Supplier Street",
+                partnerAddress: "Jl. Bunga Sepatu No.raya, Perumnas Way Kandis, Kec. Tj. Senang, Kota Bandar Lampung, Lampung 35135",
                 dateCreated: "2024-11-10T10:00:00Z"
             },
             partnerId2: {
-                partnerName: "Supplier Two",
+                partnerName: "Ayam Ungkep Sahila",
                 partnerEmail: "supplier2@example.com",
+                partnerDesc: "Ayam ungkep sahila, frozen food Lampung",
                 partnerSocials: {
                     instagram: {
                         instaId1: {
-                            instagramUsername: "Banuna",
+                            instagramUsername: "@rora.store99",
                             instagramUrl: "https://instagram.com/supplier"
                         }
                     },
@@ -161,26 +164,26 @@ const seedData = () => {
                     }
                 },
                 partnerImage: "supplier2.jpg",
-                partnerAddress: "456 Partner Lane",
+                partnerAddress: "Jl. Yasir Hadi Broto gg cempaka putih, Kedamaian, Kec. Kedamaian, Kota Bandar Lampung, Lampung 35122",
                 dateCreated: "2024-11-20T10:00:00Z"
             }
         },
         banunaStoreData: {
-            storeName: "Banuna Store",
-            headline: "Your one-stop fruit shop!",
-            description: "We provide the freshest fruits to your doorstep.",
+            storeName: "Banuna Wijen Official",
+            headline: "Pilih produk & pesan sekarang juga, bisa kirim ke luar kota loh!",
+            description: "Pisang Goreng Wijen Beku Bersertifikat Halal & BPOM. ",
             homeImage: "home.jpg",
-            storeAddress: "789 Market Street",
+            storeAddress: "Jl. Chairil Anwar Jl. Batu Besar No.47 29, Durian Payung, Kec. Tj. Karang Pusat, Kota Bandar Lampung, Lampung 35116",
             storeSocials: {
                 instagram: {
                     instaId1: {
-                        instagramUsername: "Banuna",
+                        instagramUsername: "@Banuna.wijen",
                         instagramUrl: "https://instagram.com/supplier"
                     }
                 },
                 facebook: {
                     facebookId1: {
-                        facebookUsername: "Banuna",
+                        facebookUsername: "Banuna pisang wijen beku",
                         facebookUrl: "https://facebook.com/supplier"
                     }
                 },
@@ -197,12 +200,12 @@ const seedData = () => {
                     }
                 }
             },
-            storeEmail: "contact@banunastore.com",
+            storeEmail: "contact@banunawijen.com",
             storeContacts: {
                 adminName1: "+123456789",
                 adminName2: "+987654321"
             },
-            storeMainContact: "+123456789",
+            storeMainContact: "+6282281420962",
             aboutStore: {
                 aboutTexts: {
                     text1 : "Freshness guaranteed",
