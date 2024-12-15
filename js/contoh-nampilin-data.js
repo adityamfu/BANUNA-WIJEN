@@ -62,7 +62,7 @@ fetchLandingPageData()
                             ${Object.entries(landingPageData.productSection).map(([productId, product]) => `
                                 <div class="product-card" id="${productId}">
                                     <div class="product-image">
-                                        <img src="data:image/png;base64,${product.productImages[0]}" alt="${product.productName}">
+                                        <img src="${product.productImages[0]}" alt="${product.productName}">
                                     </div>
                                     <div class="product-details">
                                         <h3>${product.productName}</h3>
@@ -117,26 +117,37 @@ fetchLandingPageData()
                 background: 'green',
                 title: 'ABOUT US',
                 content: `
-                    <h4>About Texts:</h4>
-                    <p>${landingPageData.aboutSection.aboutTexts.text1}</p>
-                    <p>${landingPageData.aboutSection.aboutTexts.text2}</p>
-                    <h4>About Images:</h4>
-                    ${Object.entries(landingPageData.aboutSection.aboutImages).map(([imageId, image]) => `
+                    <div class="about-contents">
                         <div>
-                            <p>${image.imageDesc}</p>
-                            <img src="${image.imageUrl}" alt="${image.imageDesc}">
+                            <h1>Tentang Banuna</h1>
+                            ${Object.entries(landingPageData.aboutSection.aboutTexts).map(([textId, text]) => `
+                                <p>${text}</p>
+                            `).join('')}
                         </div>
-                    `).join('')}
-                    <h4>About Videos:</h4>
-                    ${Object.entries(landingPageData.aboutSection.aboutVideos).map(([videoId, video]) => `
+            
                         <div>
-                            <p>${video.videoDesc}</p>
-                            <video controls>
-                                <source src="${video.videoUrl}" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
+                            <h4>About Images:</h4>
+                            ${Object.entries(landingPageData.aboutSection.aboutImages).map(([imageId, image]) => `
+                                <div>
+                                    <img src="${image.imageUrl}" alt="${image.imageDesc}">
+                                    <p>${image.imageDesc}</p>
+                                </div>
+                            `).join('')}
                         </div>
-                    `).join('')}
+            
+                        <div>
+                            <h4>About Videos:</h4>
+                            ${Object.entries(landingPageData.aboutSection.aboutVideos).map(([videoId, video]) => `
+                                <div>
+                                    <p>${video.videoDesc}</p>
+                                    <video controls>
+                                        <source src="${video.videoUrl}" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
                 `
             },
             {
@@ -171,7 +182,7 @@ fetchLandingPageData()
                                     </div>
                                     <div class="feedback-details">
                                         ${Object.entries(landingPageData.testimoniesSection.feedbacks).map(([feedbackId, feedback]) => `
-                                            <div class="${feedback}">
+                                            <div>
                                                 <div class="feedback-author">${feedback.feedbackName}</div>
                                                 <div class="feedback-texts">${feedback.feedbackText}</div>
                                             </div>
