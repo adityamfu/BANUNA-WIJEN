@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Reset default margins and paddings */
+        /* * {border: 1px solid black;} */
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Section container styling */
+        #feedbackSection {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            height: 150vh;
+        }
+
+        .feedback-contents {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feedback-card {
+            width: 70%;
+            height: 65vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 4rem;
+        }
+
+        .carousel-case {
+            position: relative;
+            flex: 1;
+            min-width: 15rem;
+            display: flex;
+            flex-direction: column;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-image {
+            background-color: antiquewhite;
+        }
+        .carousel-image img{
+            width: 100%;
+            height: auto;
+        }
+
+        .carousel-controls {
+            width: calc(100% - 1.4rem);
+            position: absolute;
+            z-index: 1;
+            bottom: 0px;
+            padding: 0.7rem;
+            background-color: whitesmoke;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .carousel-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .carousel-button {
+            width: 2rem;
+            height: 2rem;
+            background-color: rgb(103, 103, 103);
+            color: white;
+            cursor: pointer;
+            border-radius: 0.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .carousel-bullets {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .carousel-bullets .carousel-bullet {
+            width: 1rem;
+            height: 1rem;
+            background-color:  rgb(19, 151, 129);
+            border-radius: 1rem;
+        }
+
+        .feedback-content {
+            flex: 2.5;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: flex-start;
+        }
+
+        .feedback-headline {
+            width: 100%;
+        }
+        .feedback-texts{
+            text-align: center;
+        }
+        .feedback-headline .feedback-title {
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        .feedback-headline .feedback-tagline {
+            font-weight: bold;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .feedback-details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .feedback-author {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .feedback-bullets {
+            display: flex;
+            gap: 0.5rem;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .feedback-bullets .feedback-bullet {
+            width: 1rem;
+            height: 1rem;
+            background-color: rgb(19, 151, 129);
+            border-radius: 1rem;
+        }
+
+        .carousel-bullets .carousel-bullet.bullet-active {
+            width: 2rem;
+            background-color: orange;
+        }
+
+        .feedback-submit-case {
+            /* background-color: rebeccapurple; */
+            flex: 1;
+            max-width: 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+        }
+        .feedback-submit-case .submit-header{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .feedback-submit-case .submit-header .submit-title{
+            font-size: 1.3rem;
+            font-weight: bolder;
+            color: orange;
+        }
+        .feedback-submit-case .submit-header .submit-tagline{
+            font-size: 2rem;
+            font-weight: bolder;
+        }
+        .feedback-submit-case p{
+            max-width: 70%;
+            text-align: center;
+        }
+
+        .feedback-submit-case .submit-input{
+            width: 70%;
+            height: 3.4rem;
+            background-color: whitesmoke;
+            border-radius: 3rem;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        .feedback-submit-case .submit-input input[type="text"]{
+            width: 100%;
+            padding-left: 1.5rem;
+            height: 3.2rem;
+            background-color: whitesmoke;
+            border: none;
+            position: absolute;
+        }
+        .feedback-submit-case .submit-input input[type="button"]{
+            width: 20%;
+            height: 3rem;
+            background-color: orange;
+            border-radius: 3rem;
+            position: absolute;
+            border: none;
+            cursor: pointer;
+            right: 5px;
+        }
+
+
+        svg {
+            z-index: -1;
+            position: absolute;
+            bottom: -60%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="feedbackSection">
+        <div class="feedback-contents">
+            <div class="feedback-card">
+                <div class="carousel-case">
+                    <div class="carousel-image">
+                        <img src="https://seomuda.id/wp-content/uploads/2017/09/WhatsApp-Image-2017-09-27-at-14.46.54.jpeg" alt="">
+                    </div>
+                    <div class="carousel-controls">
+                        <div class="carousel-buttons">
+                            <div class="carousel-button">&lt;</div>
+                            <div class="carousel-button">&gt;</div>
+                        </div>
+                        <div class="carousel-bullets">
+                            <div class="carousel-bullet bullet-active"></div>
+                            <div class="carousel-bullet"></div>
+                            <div class="carousel-bullet"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="feedback-content">
+                    <div class="feedback-headline">
+                        <div class="feedback-title">Feedbacks</div>
+                        <div class="feedback-tagline">Testimoni Pelanggan Banuna</div>
+                    </div>
+                    <div class="feedback-details">
+                        <div class="feedback-author">Lita Sari</div>
+                        <div class="feedback-texts">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi
+                            magnam excepturi ipsum reprehenderit, consequuntur dolor officiis. Rerum, quis dolorum ipsa
+                            officia harum, nisi fugiat sit animi molestiae sapiente vel repellendus!</div>
+                    </div>
+                    <div class="feedback-bullets">
+                        <div class="feedback-bullet"></div>
+                        <div class="feedback-bullet"></div>
+                        <div class="feedback-bullet"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="feedback-submit-case">
+            <div class="submit-header">
+                <div class="submit-title">berikan feedback</div>
+                <div class="submit-tagline">Masukan & Testimoni untuk Banuna</div>
+            </div>
+            <p class="submit-desciption">Tulisan dan testimoni kamu sangat berarti bagi kami! Setiap masukan yang kamu berikan akan membantu BANUNA untuk terus berkembang dan memberikan yang terbaik. Terima kasih sudah berkontribusi!</p>
+            <div class="submit-input">
+                <input type="text" value="" placeholder="Isi Masukan">
+                <input type="button" value="Kirim Feedback">
+            </div>
+        </div>
+
+        <svg width="100%" height="100%" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="50" fill=" rgb(19, 151, 129)" />
+        </svg>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            var nextUrl = "";
+            const bullets = document.querySelectorAll('.carousel-bullet');
+            const prevButton = document.querySelector('.carousel-button:first-child');
+            const nextButton = document.querySelector('.carousel-button:last-child');
+            let activeIndex = 0;
+
+            function updateActiveBullet(index) {
+                bullets.forEach((bullet, i) => {
+                    if (i === index) {
+                        bullet.classList.add('bullet-active');
+                    } else {
+                        bullet.classList.remove('bullet-active');
+                    }
+                });
+            }
+
+            prevButton.addEventListener('click', () => {
+                activeIndex = (activeIndex - 1 + bullets.length) % bullets.length;
+                updateActiveBullet(activeIndex);
+            });
+
+            nextButton.addEventListener('click', () => {
+                activeIndex = (activeIndex + 1) % bullets.length;
+                updateActiveBullet(activeIndex);
+            });
+
+            // Initialize active bullet
+            updateActiveBullet(activeIndex);
+        });
+    </script>
+
+</body>
+
+</html>

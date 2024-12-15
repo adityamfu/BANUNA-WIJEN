@@ -166,6 +166,40 @@ const seedData = () => {
                 partnerImage: "supplier2.jpg",
                 partnerAddress: "Jl. Yasir Hadi Broto gg cempaka putih, Kedamaian, Kec. Kedamaian, Kota Bandar Lampung, Lampung 35122",
                 dateCreated: "2024-11-20T10:00:00Z"
+            },
+            partnerId3: {
+                partnerName: "Azqila Market",
+                partnerEmail: "supplier1@example.com",
+                partnerDesc: "Solusi Untuk Masakan Dapur",
+                partnerSocials: {
+                    instagram: {
+                        instaId1: {
+                            instagramUsername: "@azqilamarket",
+                            instagramUrl: "https://instagram.com/supplier"
+                        }
+                    },
+                    facebook: {
+                        facebookId1: {
+                            facebookUsername: "Banuna",
+                            facebookUrl: "https://facebook.com/supplier"
+                        }
+                    },
+                    youtube: {
+                        youtubeId1: {
+                            youtubeUsername: "Banuna",
+                            youtubeUrl: "https://youtube.com/supplier"
+                        }
+                    },
+                    tiktok: {
+                        tiktokId1: {
+                            tiktokUsername: "Banuna",
+                            tiktokUrl: "https://tiktok.com/supplier"
+                        }
+                    }
+                },
+                partnerImage: "supplier3.jpg",
+                partnerAddress: "Jl. Cakrawala, Beringin Raya, Kemiling, Bandar Lampung City, Lampung",
+                dateCreated: "2024-11-10T10:00:00Z"
             }
         },
         banunaStoreData: {
