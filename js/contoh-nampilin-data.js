@@ -253,7 +253,7 @@ fetchLandingPageData()
         var container = document.createElement("div");
         sections.forEach(section => {
             container.innerHTML += `
-                <section id="${section.id}" style="background-image: url('data:image/png;base64,${section.background}'); background-size: cover; background-position: center;">
+                <section class="sections" id="${section.id}" style="background-image: url('data:image/png;base64,${section.background}'); background-size: cover; background-position: center;">
                     ${section.content}
                 </section>
             `;
