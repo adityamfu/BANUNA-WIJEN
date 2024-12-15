@@ -1,5 +1,6 @@
 import { fetchLandingPageData } from "./data-model.js";
 // contoh 1
+// text random di background cuma ngetes gambar aja, nanti ga di pake juga itu
 
 fetchLandingPageData()
     .then((landingPageData) => {
