@@ -325,7 +325,7 @@ document.getElementById("clearDatabase").addEventListener('click', () => {
 });
 
 
-// Contoh pemanggilan dengan hanya satu field dan data dan banyak field banyak data
+// Contoh set data dengan hanya satu (tabel) dengan satu field  atau banyak field
 document.getElementById("testUpdate").addEventListener('click', () => {
     universalDataFunction(
         "update",
