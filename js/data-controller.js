@@ -96,10 +96,10 @@ const universalTakeData = async (path) => {
     try {
         // Ganti titik (.) dengan garis miring (/), karena Firebase menggunakan path dengan slash
         const pathFirebase = path.replace(/\./g, "/");
-        
+
         const dbRef = ref(database, pathFirebase);  // Mendapatkan reference path di Firebase
         const snapshot = await get(dbRef);  // Mengambil data secara asinkron
-        
+
         // Mengembalikan data jika ada, atau null jika tidak ada
         return snapshot.exists() ? snapshot.val() : null;
     } catch (error) {
@@ -108,7 +108,72 @@ const universalTakeData = async (path) => {
     }
 }
 // contoh penggunaan await universalTakeData("products"); berarti megambil semua data dari products
+function generateRandomAlphanumeric(length = 10) {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result = '';
+    for (let i = 0; i < length; i++) {
+        result += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return result;
+}
 
-export { universalDataFunction, universalTakeData, specifiedTakeData, database };
+function generateCurrentTime() {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+
+    return `${year}-${month}-${day}`;
+}
+
+async function performLogin() {
+    Swal.fire({
+        title: 'Silahkan Login',
+        customClass: {
+            popup: 'swal-solid-background'
+        },
+        html: `
+        <div style="display: flex; flex-direction: column; gap: 10px; width: 100%;">
+            <div style="display: flex; flex-direction: column; align-items: start; width: 100%;">
+                <label for="input1" style="margin-bottom: 5px; font-size: 14px;">Admin ID</label>
+                <input type="text" id="input1" placeholder="Masukkan Admin ID" 
+                    style="width: 100%; padding: 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: start; width: 100%;">
+                <label for="input2" style="margin-bottom: 5px; font-size: 14px;">Password</label>
+                <input type="password" id="input2" placeholder="Masukkan Password" 
+                    style="width: 100%; padding: 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
+            </div>
+        </div>
+    `,
+        focusConfirm: false,
+        showCancelButton: true,
+        confirmButtonText: 'Submit',
+        preConfirm: () => {
+            const input1 = document.getElementById('input1').value;
+            const input2 = document.getElementById('input2').value;
+            if (!input1 || !input2) {
+                Swal.showValidationMessage('Semua kolom harus diisi!');
+            }
+            return { input1, input2 };
+        }
+    }).then(async (result) => {
+        if (result.isConfirmed) {
+            if (await specifiedTakeData("adminAccounts", result.value.input1, "adminPassword") === result.value.input2) {
+                console.log("berhasil");
+                const token = `${result.value.input1}-${generateRandomAlphanumeric()}`
+                localStorage.setItem("token", token);
+                set(ref(database, "admin-login"), { [token]: true })
+                window.location.reload();
+            } else {
+                window.location.reload();
+            }
+        } else {
+            window.location.reload();
+        }
+    });
+}
+
+export { universalDataFunction,performLogin, universalTakeData, specifiedTakeData, database, generateRandomAlphanumeric, generateCurrentTime };
 
 

@@ -3,6 +3,7 @@
   font-style: normal;
   scroll-behavior: smooth;
 }
+
 body {
   padding: 0;
   margin: 0;
@@ -15,6 +16,7 @@ body {
 a {
   text-decoration: none;
 }
+
 header {
   width: 100vw;
 }
@@ -95,11 +97,19 @@ header {
   font-weight: 800;
 }
 
+
 @media (max-width: 768px) {
+
+  .title-details,
+  .description-details {
+    text-align: center;
+  }
+
   .back-button-details {
     display: none;
     opacity: 0;
   }
+
   .top {
     margin-top: 84px !important;
     height: calc(100% - 84px) !important;
@@ -107,6 +117,7 @@ header {
     background-position: top left, bottom right !important;
     background-size: 105px 202px !important;
   }
+
   .Frame2651 {
     gap: 30px;
     flex-direction: column;
@@ -154,6 +165,7 @@ header {
   .Partner {
     height: 100% !important;
   }
+
   .fixed-bottom-details {
     width: auto !important;
     position: fixed !important;
@@ -170,9 +182,11 @@ header {
     align-items: center;
     z-index: 1000;
   }
+
   .frame-details {
     width: 100%;
   }
+
 }
 
 .ALink {
@@ -254,8 +268,13 @@ img .main-image {
   object-fit: contain;
 }
 
+#prodImage {
+  width: 292.68px;
+  height: 400px;
+  object-fit: contain;
+}
+
 .list-details {
-  width: 100%;
   max-width: 382px;
   height: 643px;
   display: inline-flex;
@@ -263,6 +282,13 @@ img .main-image {
   justify-content: flex-start;
   align-items: flex-start;
   gap: 20px;
+}
+
+@media screen and (min-width: 740px) {
+  .list-details {
+    width: 100%;
+    transition: width 0.3s ease;
+  }
 }
 
 .label-details {
@@ -299,7 +325,7 @@ img .main-image {
   display: none;
 }
 
-.radio-input:checked + .checkbox-details {
+.radio-input:checked+.checkbox-details {
   background: #646363;
   border: 1px solid #010200;
 }
@@ -411,6 +437,7 @@ input[type='radio'] .checkbox-details {
   outline: none;
   border-color: #010200;
 }
+
 .label-details {
   align-self: stretch;
   color: #010200;
@@ -470,6 +497,7 @@ input[type='radio'] .checkbox-details {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+
   @media (max-width: 768px) {
     flex-direction: column;
   }
@@ -504,6 +532,7 @@ button {
 .Btnbeli:hover {
   background: #fbc607c5;
 }
+
 .fixed-bottom-details {
   position: relative;
   width: 100%;
