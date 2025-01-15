@@ -1,143 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Passero+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/details.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Passero+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="./css/details.css" />
-  
-  <title>Details</title>
-  
-</head>
+    <title>Details</title>
+  </head>
 
-<body>
-  <header>
-    <div class="Navbar">
-      <div class="Frame2648">
-        <div class="toggle-button" id="backButton">
-          <i class="fa-solid fa-chevron-left"></i>
-        </div>
+  <body>
+    <header>
+      <div class="Navbar">
+        <div class="Frame2648">
+          <div class="toggle-button" id="backButton">
+            <i class="fa-solid fa-chevron-left"></i>
+          </div>
 
-        <button class="back-button-details">
-          <i class="fa-solid fa-chevron-left"></i>
-          <div class="back-text-details">Kembali</div>
-        </button>
+          <button class="back-button-details">
+            <i class="fa-solid fa-chevron-left"></i>
+            <div class="back-text-details">Kembali</div>
+          </button>
 
-        <a href="./index.html" class="Logo">
-          <img class="logo" src="./images/banunnalogo.png" alt="Logo" />
-        </a>
-
-        <nav class="Menu">
-          <a href="#contact" class="contact">
-            <i class="fa-brands fa-whatsapp fa-lg"></i>
-            <div class="txt">Kontak</div>
+          <a href="./index.html" class="Logo">
+            <img class="logo" src="./images/banunnalogo.png" alt="Logo" />
           </a>
-        </nav>
-      </div>
-    </div>
-  </header>
-  <main>
-    <div class="Homecontent">
-      <div class="top">
-        <div class="Frame2651">
-          <img class="main-image" src="" id="prodImage" />
-          <form class="list-details">
-            <div class="field-details">
-              <div class="title-details" id="prodName"></div>
-              <div class="description-details" id="prodDesc">
 
-              </div>
-            </div>
-
-            <div class="field-details">
-              <div class="label-details">Nama</div>
-              <input type="text" class="text-field-details" placeholder="Masukkan namamu..." id="namaPembeli" />
-            </div>
-
-            <div class="field-details">
-              <div class="label-details">Nomor Telpon</div>
-              <input type="tel" class="text-field-details" placeholder="Masukkan nomor telpon..." id="noPembeli" />
-            </div>
-
-            <div class="field-details">
-              <div class="label-details">Alamat</div>
-              <input type="text" class="text-field-details" placeholder="Masukkan alamatmu..." id="alamatPembeli" />
-              <div class="optional-details">*Opsional.</div>
-            </div>
-
-            <div class="action-field">
-              <div class="field-details">
-                <div class="label-details">Tansaksi</div>
-                <div class="transaction-details">
-                  <label class="delivery-details">
-                    <input type="radio" name="transaction" class="radio-input" value="Kirim Kerumah" />
-                    <div class="checkbox-details"></div>
-                    Kirim Kerumah
-                  </label>
-                </div>
-                <div class="transaction-details">
-                  <label class="cod-details">
-                    <input type="radio" name="transaction" class="radio-input" value="COD" />
-                    <div class="checkbox-details"></div>
-                    COD
-                  </label>
-                </div>
-                <div class="transaction-details">
-                  <label class="pickup-details">
-                    <input type="radio" name="transaction" class="radio-input" value="Ambil Di Toko" />
-                    <div class="checkbox-details"></div>
-                    Ambil Di Toko
-                  </label>
-                </div>
-              </div>
-
-              <div class="field-details">
-                <div class="label-details">Pembayaran</div>
-                <select class="payment-dropdown-details" id="modePembayaran">
-                  <option value="" disabled selected>
-                    Metode pembayaran...
-                  </option>
-                  <option value="Gopay">Gopay</option>
-                  <option value="Shopee Pay">ShopeePay</option>
-                  <option value="Dana">Dana</option>
-                  <option value="OVO">OVO</option>
-                  <option value="Transfer Bank">Transfer Bank</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="fixed-bottom-details">
-              <div class="field-details">
-                <div class="label-details">Jumlah</div>
-                <div class="number-input-details">
-                  <b class="minus-button-details">-</b>
-                  <input type="number" class="number-display-details" id="jumlahBeli">
-                  <b class="plus-button-details">+</b>
-                </div>
-              </div>
-
-              <div class="frame-details">
-                <div class="price-details" id="prodPrice"></div>
-                <button class="button-details Btnbeli" id="tombolKonfirmasi">Konfirmasi</button>
-              </div>
-            </div>
-          </form>
+          <nav class="Menu">
+            <a href="#contact" class="contact">
+              <i class="fa-brands fa-whatsapp fa-lg"></i>
+              <div class="txt">Kontak</div>
+            </a>
+          </nav>
         </div>
       </div>
-    </div>
-  </main>
+    </header>
+    <main>
+      <div class="Homecontent">
+        <div class="top">
+          <div class="Frame2651">
+            <img class="main-image" src="" id="prodImage" />
 
-  
+            <form method="post" class="list-details">
+              <div class="field-details">
+                <div class="title-details" id="prodName"></div>
+                <div class="description-details" id="prodDesc"></div>
+              </div>
 
-  <script type="module" src="js/details.js"></script>
-</body>
+              <div class="field-details">
+                <div class="label-details">Nama</div>
+                <input
+                  type="text"
+                  class="text-field-details"
+                  placeholder="Masukkan namamu..."
+                  id="namaPembeli"
+                  required />
+              </div>
 
+              <div class="field-details">
+                <div class="label-details">Nomor Telpon</div>
+                <input
+                  type="tel"
+                  class="text-field-details"
+                  placeholder="Masukkan nomor telpon..."
+                  id="noPembeli"
+                  required />
+              </div>
+
+              <div class="field-details">
+                <div class="label-details">Alamat</div>
+                <input
+                  type="text"
+                  class="text-field-details"
+                  placeholder="Masukkan alamatmu..."
+                  id="alamatPembeli"
+                  required />
+                <div class="optional-details">*Opsional.</div>
+              </div>
+
+              <div class="action-field">
+                <div class="field-details">
+                  <div class="label-details">Pengiriman</div>
+                  <div class="transaction-details">
+                    <label class="delivery-details">
+                      <input
+                        type="radio"
+                        name="transaction"
+                        class="radio-input"
+                        value="Kirim Kerumah" />
+                      <div class="checkbox-details"></div>
+                      Kirim Kerumah
+                    </label>
+                  </div>
+                  <div class="transaction-details">
+                    <label class="cod-details">
+                      <input
+                        type="radio"
+                        name="transaction"
+                        class="radio-input"
+                        value="COD" />
+                      <div class="checkbox-details"></div>
+                      COD
+                    </label>
+                  </div>
+                  <div class="transaction-details">
+                    <label class="pickup-details">
+                      <input
+                        type="radio"
+                        name="transaction"
+                        class="radio-input"
+                        value="Ambil Di Toko" />
+                      <div class="checkbox-details"></div>
+                      Ambil Di Toko
+                    </label>
+                  </div>
+                </div>
+
+                <div class="field-details">
+                  <div class="label-details">Pembayaran</div>
+                  <select class="payment-dropdown-details" id="modePembayaran">
+                    <option value="" disabled selected>
+                      Metode pembayaran...
+                    </option>
+                    <option value="Cod">COD</option>
+                    <option value="Gopay">Gopay</option>
+                    <option value="Shopee Pay">ShopeePay</option>
+                    <option value="Dana">Dana</option>
+                    <option value="OVO">OVO</option>
+                    <option value="Transfer Bank">Transfer Bank</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="fixed-bottom-details">
+                <div class="field-details">
+                  <div class="label-details">Jumlah</div>
+                  <div class="number-input-details">
+                    <b class="minus-button-details">-</b>
+                    <input
+                      type="number"
+                      class="number-display-details"
+                      id="jumlahBeli" />
+                    <b class="plus-button-details">+</b>
+                  </div>
+                </div>
+
+                <div class="frame-details">
+                  <div class="price-details" id="prodPrice"></div>
+                  <button
+                    class="button-details Btnbeli"
+                    id="tombolKonfirmasi"
+                    type="submit">
+                    Konfirmasi
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script type="module" src="js/details.js"></script>
+  </body>
 </html>
