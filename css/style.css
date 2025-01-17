@@ -3,6 +3,7 @@
   font-style: normal;
   scroll-behavior: smooth;
 }
+
 body {
   padding: 0;
   margin: 0;
@@ -16,9 +17,11 @@ a {
   text-decoration: none;
   color: black;
 }
+
 header {
   width: 100vw;
 }
+
 .Navbar {
   width: 100%;
   height: auto;
@@ -93,12 +96,14 @@ header {
     padding-inline: 5rem;
   }
 }
+
 @media (max-width: 768px) {
   .top {
     flex-direction: column-reverse;
     background-position: top left, bottom right !important;
     background-size: 105px 202px, 337px 337px !important;
   }
+
   .Frame2651 {
     gap: 30px;
     flex-direction: column-reverse;
@@ -200,7 +205,7 @@ header {
 }
 
 .Homecontent {
-  width: 100vw;
+  width: calc(100vw - 1.1rem);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -250,6 +255,7 @@ img .Rectangle6 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+
   @media (max-width: 768px) {
     align-items: center;
     justify-content: center;
@@ -262,10 +268,12 @@ img .Rectangle6 {
   height: auto;
   object-fit: contain;
 }
+
 .BanunaWijenFrozen {
   color: #010200;
   font-size: 50px;
   font-weight: 900;
+
   @media (max-width: 768px) {
     text-align: center;
     font-size: 30px;
@@ -278,6 +286,7 @@ img .Rectangle6 {
   font-size: 20px;
   font-weight: 300;
   width: 100%;
+
   @media (max-width: 768px) {
     text-align: center;
     font-size: 12px;
@@ -288,6 +297,7 @@ img .Rectangle6 {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+
   @media (max-width: 768px) {
     flex-direction: column;
   }
@@ -387,6 +397,7 @@ button:hover {
   align-items: flex-start;
   flex-wrap: wrap;
   gap: 40px;
+
   @media (max-width: 768px) {
     justify-content: center;
     align-items: center;
@@ -412,6 +423,7 @@ button:hover {
 .submit-desciption {
   font-size: 14px;
 }
+
 .text-p {
   align-self: stretch;
   text-align: center;
@@ -425,6 +437,7 @@ button:hover {
 .Productlist {
   width: 100%;
   height: 100%;
+  padding-top: 5rem;
   /* padding: 70px 20px; */
   flex-direction: column;
   justify-content: center;
@@ -435,6 +448,7 @@ button:hover {
   background-repeat: no-repeat;
   background-position: top left;
   background-size: 247.45px 381.95px;
+
   @media (max-width: 768px) {
     background-size: 182px 281px;
   }
@@ -455,6 +469,7 @@ button:hover {
   justify-content: flex-start;
   align-items: flex-start;
   display: flex;
+
   @media (max-width: 768px) {
     max-width: 362px;
   }
@@ -466,6 +481,7 @@ button:hover {
   font-family: Poppins;
   font-weight: 800;
   word-wrap: break-word;
+
   @media (max-width: 768px) {
     text-align: center;
     width: 100%;
@@ -480,6 +496,7 @@ button:hover {
 .btm-title {
   color: #010200;
   font-size: 30px;
+
   @media (max-width: 768px) {
     font-size: 20px;
   }
@@ -497,6 +514,7 @@ button:hover {
   display: flex;
   transition: all 0.4s ease-in-out;
 }
+
 .Card:hover {
   cursor: pointer;
   transform: translateY(-2px) scale(1);
@@ -504,6 +522,7 @@ button:hover {
   opacity: 0.9;
   transition-delay: 0.1s;
 }
+
 .card-image {
   width: 180px;
   height: 222px;
@@ -607,6 +626,7 @@ button:hover {
   background-repeat: no-repeat;
   background-position: bottom right;
   background-size: 198px 380px;
+
   @media (max-width: 768px) {
     background-size: 140px 270px;
     min-height: 70vh;
@@ -720,6 +740,7 @@ button:hover {
   font-weight: 300;
   word-wrap: break-word;
 }
+
 .testimoni {
   width: 1280px;
   height: 639px;
@@ -780,10 +801,12 @@ button:hover {
 }
 
 @keyframes arrowIdle {
+
   0%,
   100% {
     transform: translate(-50%, 1500%) translateY(0);
   }
+
   50% {
     transform: translate(-50%, 1500%) translateY(-15px);
   }
@@ -936,10 +959,12 @@ button:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   @media (min-width: 345px) {
     padding: 0px;
     width: 100%;
   }
+
   @media (max-width: 345px) {
     padding: 0px;
     width: calc(100% - 20px);
@@ -953,10 +978,12 @@ button:hover {
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
+
   @media (min-width: 767px) {
     width: 100%;
     padding: 0px;
   }
+
   @media (max-width: 440px) {
     padding: 0px;
   }
@@ -973,6 +1000,7 @@ button:hover {
   flex-direction: column;
   gap: 5px;
 }
+
 .frame2686 .description {
   padding: 0;
   margin: 0;
@@ -1026,6 +1054,7 @@ button:hover {
   flex-wrap: wrap;
   justify-content: space-evenly;
   gap: 40px;
+
   @media (max-width: 768px) {
     gap: 0.5rem;
   }
@@ -1043,6 +1072,7 @@ button:hover {
   padding: 0;
   margin: 0;
 }
+
 .list li {
   font-size: 12px;
   word-wrap: break-word;
@@ -1051,6 +1081,7 @@ button:hover {
   line-height: 24px;
   max-width: 200px;
 }
+
 #testimoniesSection {
   display: flex;
   flex-direction: column;
@@ -1067,6 +1098,7 @@ button:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   @media (max-width: 768px) {
     height: 100%;
   }
@@ -1080,6 +1112,7 @@ button:hover {
   max-width: 890px;
   width: 100%;
   gap: 2rem;
+
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
@@ -1108,6 +1141,7 @@ button:hover {
   justify-content: center;
   overflow: hidden;
 }
+
 .carousel-image img {
   width: auto;
   height: auto;
@@ -1161,6 +1195,7 @@ button:hover {
   justify-content: space-evenly;
   align-items: flex-start;
   padding-inline: 20px;
+
   @media (max-width: 768px) {
     align-items: center;
   }
@@ -1172,6 +1207,7 @@ button:hover {
   align-items: center;
   width: 100%;
 }
+
 .feedback-details div {
   display: flex;
   flex-direction: column;
@@ -1217,6 +1253,7 @@ button:hover {
   max-width: 500px;
   font-size: 12px;
   text-align: center;
+
   @media (max-width: 768px) {
     max-width: 362px;
   }
@@ -1233,6 +1270,7 @@ button:hover {
   flex-direction: row;
   align-items: center;
 }
+
 .feedback-submit-case .submit-input input[type='text'] {
   width: 100%;
   padding: 1rem;
@@ -1241,6 +1279,7 @@ button:hover {
   border: none;
   position: absolute;
 }
+
 .feedback-submit-case .submit-input input[type='button'] {
   width: auto;
   height: 3rem;
@@ -1268,11 +1307,13 @@ button:hover {
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: 1000px;
+
   @media (max-width: 768px) {
     background-position: bottom right;
     background-size: 800px;
   }
 }
+
 .bottom-big-circle {
   z-index: -1;
   position: absolute;

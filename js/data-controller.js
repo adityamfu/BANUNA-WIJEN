@@ -1,4 +1,4 @@
-import { database } from "./firebase-config.js";
+import { auth, authLogin, database } from "./firebase-config.js";
 import { ref, get, set, update, remove, runTransaction } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-database.js";
 
 /**
@@ -159,21 +159,21 @@ async function performLogin() {
         }
     }).then(async (result) => {
         if (result.isConfirmed) {
-            if (await specifiedTakeData("adminAccounts", result.value.input1, "adminPassword") === result.value.input2) {
-                console.log("berhasil");
-                const token = `${result.value.input1}-${generateRandomAlphanumeric()}`
+            const isLogged = await authLogin(result.value.input1, result.value.input2)
+            if (isLogged.success) {
+                const token = isLogged.datauser._tokenResponse.idToken
                 localStorage.setItem("token", token);
-                set(ref(database, "admin-login"), { [token]: true })
+                set(ref(database, "admin-login"), { [isLogged.datauser.user.uid]: isLogged.datauser._tokenResponse.idToken })
                 window.location.reload();
             } else {
-                window.location.reload();
+                performLogin()
             }
         } else {
-            window.location.reload();
+            performLogin()
         }
     });
 }
 
-export { universalDataFunction,performLogin, universalTakeData, specifiedTakeData, database, generateRandomAlphanumeric, generateCurrentTime };
+export { universalDataFunction, performLogin, universalTakeData, specifiedTakeData,database, generateRandomAlphanumeric, generateCurrentTime };
 
 
