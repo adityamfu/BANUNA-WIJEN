@@ -136,7 +136,7 @@ async function performLogin() {
         <div style="display: flex; flex-direction: column; gap: 10px; width: 100%;">
             <div style="display: flex; flex-direction: column; align-items: start; width: 100%;">
                 <label for="input1" style="margin-bottom: 5px; font-size: 14px;">Admin ID</label>
-                <input type="text" id="input1" placeholder="Masukkan Admin ID" 
+                <input type="text" id="input1" placeholder="Masukkan Email" 
                     style="width: 100%; padding: 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
             </div>
             <div style="display: flex; flex-direction: column; align-items: start; width: 100%;">
